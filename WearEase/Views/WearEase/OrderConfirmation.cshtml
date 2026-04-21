@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Order Confirmation ";
+}
+
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <!-- Success Icon -->
+        <div class="mb-4">
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+        </div>
+
+        <h2 class="fw-bold mb-3">Thank You for Your Purchase!</h2>
+        <p class="text-muted mb-4">
+            Your order has been placed successfully. You’ll receive an email confirmation shortly.
+        </p>
+
+        <!-- Order Summary -->
+        <div class="card mx-auto border-0 shadow-sm mb-4" style="max-width: 600px;">
+            <div class="card-body">
+                <h5 class="fw-bold mb-3">Order Summary</h5>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Men's Casual Shirt</span>
+                    <span>$25.00</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Women's Floral Dress</span>
+                    <span>$30.00</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Kids T-Shirt</span>
+                    <span>$15.00</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between fw-bold mb-2">
+                    <span>Total Paid</span>
+                    <span>$75.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-center gap-3">
+            <a href="/WearEase/Products" class="btn btn-dark px-4">Continue Shopping</a>
+            <a href="/WearEase/Index" class="btn btn-outline-dark px-4">Go to Home</a>
+        </div>
+    </div>
+</section>

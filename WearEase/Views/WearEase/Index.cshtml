@@ -1,0 +1,116 @@
+﻿ @model IEnumerable<WearEase.Models.Product>
+
+@{
+    ViewData["Title"] = "Home";
+
+}
+
+
+<section class="hero-section text-center text-white d-flex align-items-center justify-content-center"
+         style="background-image: url('@Url.Content("~/images/Bnners/Fashion.webp")');
+                background-size: cover;
+                background-position: center;
+                height: 80vh;">
+    <div class="container">
+        <h1 class="display-4 fw-bold text-black">Welcome to <span class="text-warning">WearEase</span></h1>
+        <p class="lead mb-4 text-black ">Your one-stop shop for Men, Women, and Kids Fashion</p>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-dark btn-lg px-4">Shop Now</a>
+    </div>
+</section>
+
+
+<!-- FEATURED CATEGORIES -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Shop by Category</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <img src="~/images/Men/taras-chernus--au3XMzfhro-unsplash.jpg"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover; width: 100%; border-radius: 8px;">
+
+
+                    <div class="card-body">
+                        <h5 class="card-title">Men</h5>
+                       @*  <a asp-controller="Product" asp-action="Index" class="btn btn-outline-dark">Shop Now</a> *@
+                       <a asp-controller="Product"
+   asp-action="Index"
+   asp-route-categoryId="7"
+   class="btn btn-outline-dark">
+   Shop Now
+</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <img src="~/images/Women/olga-zhuravleva-A3MleA0jtoE-unsplash.jpg"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover; width: 100%; border-radius: 8px;">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Women</h5>
+
+                        @* <a asp-controller="Product" asp-action="Index" class="btn btn-outline-dark">Shop Now</a> *@
+                        <a asp-controller="Product"
+   asp-action="Index"
+   asp-route-categoryId="6"
+   class="btn btn-outline-dark">
+   Shop Now
+</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <img src="~/images/Kids/the-artist-studio-DzeQUEYRUOE-unsplash.jpg"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover; width: 100%; border-radius: 8px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Kids</h5>
+                    <a asp-controller="Product"
+   asp-action="Index"
+   asp-route-categoryId="8"
+   class="btn btn-outline-dark">
+   Shop Now
+</a>
+
+                        @*  <a asp-controller="Product" asp-action="Index" class="btn btn-outline-dark">Shop Now</a> *@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Featured Products</h2>
+        <div class="row">
+            @foreach(var p in Model)
+            {
+                <div class="col-md-3 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="@p.ImageUrl"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover; width: 100%; border-radius: 8px;">
+                    <div class="card-body">
+                        <h5 class="card-title">@p.Name</h5>
+                        <p class="card-text">$@p.Price</p>
+                        <a asp-controller="Product" asp-action="Details"  asp-route-id="@p.Id" class="btn btn-dark">View Details</a>
+                    </div>
+                </div>
+            </div>
+            }
+            
+           
+        </div>
+    </div>
+</section>
+
+
+ 

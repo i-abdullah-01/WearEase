@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Product Details";
+}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- PRODUCT IMAGE -->
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img src="~/images/Men/pexels-chloekalaartist-1043474.jpg"
+                     class="img-fluid rounded shadow-sm"
+                     style="height: 500px; object-fit: cover; width: 100%;"
+                     alt="Men's Formal Shirt">
+            </div>
+
+            <!-- PRODUCT DETAILS -->
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-3">Men's Casual Shirt</h2>
+                <p class="text-muted mb-4">Stay stylish and comfortable with our premium cotton casual shirt, perfect for both formal and casual outings.</p>
+                <h4 class="text-warning fw-bold mb-3">$25.00</h4>
+
+                <!-- SIZE SELECTION -->
+                <div class="mb-3">
+                    <label class="fw-semibold">Select Size:</label>
+                    <div class="d-flex gap-2 mt-2">
+                        <button class="btn btn-outline-dark btn-sm">S</button>
+                        <button class="btn btn-outline-dark btn-sm">M</button>
+                        <button class="btn btn-outline-dark btn-sm">L</button>
+                        <button class="btn btn-outline-dark btn-sm">XL</button>
+                    </div>
+                </div>
+
+                <!-- QUANTITY -->
+                <div class="mb-4">
+                    <label class="fw-semibold">Quantity:</label>
+                    <input type="number" value="1" min="1" class="form-control w-25 d-inline-block ms-2" />
+                </div>
+
+                <!-- ACTION BUTTONS -->
+                <!-- ACTION BUTTONS -->
+                <div class="d-flex gap-3">
+                    <a href="/WearEase/Cart" class="btn btn-dark px-4">Add to Cart</a>
+                    <a href="/WearEase/Cart" class="btn btn-warning text-dark px-4 fw-semibold">Buy Now</a>
+                </div>
+
+
+                <!-- ADDITIONAL INFO -->
+                <div class="mt-5">
+                    <h6 class="fw-bold mb-2">Product Details:</h6>
+                    <ul class="text-muted">
+                        <li>Material: 100% Cotton</li>
+                        <li>Available Sizes: S, M, L, XL</li>
+                        <li>Color: Sky Blue</li>
+                        <li>Care: Machine Wash Cold</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h3 class="fw-bold mb-4">You May Also Like</h3>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="~/images/Men/joel-muniz-yGrMHa9gxIo-unsplash.jpg"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="fw-bold">Men’s Jacket</h6>
+                        <p class="text-muted">$45.00</p>
+                        <a href="/WearEase/Details" class="btn btn-dark btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="~/images/Women/naseebo-6Tczs5ehcbM-unsplash.jpg"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="fw-bold">Floral Dress</h6>
+                        <p class="text-muted">$30.00</p>
+                        <a href="/WearEase/Details" class="btn btn-dark btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="~/images/Kids/kristiina-glaase-v64tbMCW8Is-unsplash.jpg"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="fw-bold">Kids T-Shirt</h6>
+                        <p class="text-muted">$15.00</p>
+                        <a href="/WearEase/Details" class="btn btn-dark btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="~/images/Men/taras-chernus--au3XMzfhro-unsplash.jpg"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="fw-bold">Formal Shirt</h6>
+                        <p class="text-muted">$35.00</p>
+                        <a href="/WearEase/Details" class="btn btn-dark btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

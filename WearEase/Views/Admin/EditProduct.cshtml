@@ -1,0 +1,92 @@
+﻿@* @model WearEase.Models.Product
+
+<h3>Edit Product</h3>
+
+<form method="post" asp-action="UpdateProduct" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Price</label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Category</label>
+        <select asp-for="CategoryId" class="form-control">
+            @foreach (var c in ViewBag.Categories)
+            {
+                <option value="@c.Id">@c.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Change Image</label>
+        <input type="file" name="ImageFile" class="form-control" />
+        <img src="@Model.ImageUrl" width="120" class="mt-2" />
+    </div>
+
+    <button class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+ *@
+@model WearEase.Models.Product
+
+<h3>Edit Product</h3>
+
+<form method="post" asp-action="UpdateProduct" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="ImageUrl" /> <!-- 🔴 VERY IMPORTANT -->
+
+    <div class="mb-3">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Price</label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Category</label>
+        <select asp-for="CategoryId" class="form-control">
+            @foreach (var c in ViewBag.Categories)
+            {
+                <option value="@c.Id" selected="@(c.Id == Model.CategoryId)">
+                    @c.Name
+                </option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Change Image</label>
+        <input type="file" name="ImageFile" class="form-control" />
+        <img src="@Model.ImageUrl" width="120" class="mt-2" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">
+        Cancel
+    </a>
+
+
+</form>

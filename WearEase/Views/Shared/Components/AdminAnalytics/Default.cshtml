@@ -1,0 +1,50 @@
+﻿@model WearEase.Models.ViewModels.AdminAnalyticsViewModel
+
+<div class="row mb-4">
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-left-primary">
+            <div class="card-body text-center">
+                <h6>Total Orders</h6>
+                <h4 class="fw-bold">@Model.TotalOrders</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-left-success">
+            <div class="card-body text-center">
+                <h6>Total Revenue</h6>
+                <h4 class="fw-bold">$@Model.TotalRevenue</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="card shadow-sm border-left-success">
+            <div class="card-body text-center">
+                <h6>Approved</h6>
+                <h4 class="fw-bold">@Model.ApprovedOrders</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="card shadow-sm border-left-warning">
+            <div class="card-body text-center">
+                <h6>Pending</h6>
+                <h4 class="fw-bold">@Model.PendingOrders</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="card shadow-sm border-left-info">
+            <div class="card-body text-center">
+                <h6>Delivered</h6>
+                <h4 class="fw-bold">@Model.DeliveredOrders</h4>
+            </div>
+        </div>
+    </div>
+
+</div>

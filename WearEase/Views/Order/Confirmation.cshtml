@@ -1,0 +1,59 @@
+﻿@model WearEase.Models.Order
+
+@{
+    ViewData["Title"] = "Order Confirmation";
+}
+
+<section class="py-5 bg-light">
+    <div class="container text-center">
+
+        <!-- Success Icon -->
+        <div class="mb-4">
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+        </div>
+
+        <h2 class="fw-bold mb-3">Thank You for Your Purchase!</h2>
+        <p class="text-muted mb-4">
+            Your order has been placed successfully.
+            <br />
+            <strong>Order #@Model.Id</strong> • @Model.OrderDate.ToString("dd MMM yyyy")
+        </p>
+
+        <!-- Order Summary -->
+        <div class="card mx-auto border-0 shadow-sm mb-4" style="max-width: 600px;">
+            <div class="card-body">
+                <h5 class="fw-bold mb-3">Order Summary</h5>
+
+                @foreach (var item in Model.OrderItems)
+                {
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>
+                            @item.Product.Name × @item.Quantity
+                        </span>
+                        <span>
+                            $@(item.Quantity* item.UnitPrice)
+                        </span>
+                    </div>
+                }
+
+                <hr />
+
+                <div class="d-flex justify-content-between fw-bold mb-2">
+                    <span>Total Paid</span>
+                    <span>$@Model.TotalAmount</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-center gap-3">
+            <a asp-controller="Product" asp-action="Index" class="btn btn-dark px-4">
+                Continue Shopping
+            </a>
+            <a asp-controller="WearEase" asp-action="Index" class="btn btn-outline-dark px-4">
+                Go to Home
+            </a>
+        </div>
+
+    </div>
+</section>

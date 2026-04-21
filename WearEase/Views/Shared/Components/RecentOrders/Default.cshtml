@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WearEase.Models.Order>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body">
+        <h5 class="fw-bold mb-3">Recent Orders</h5>
+
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>#@order.Id</td>
+                        <td>$@order.TotalAmount</td>
+                        <td>
+                            <span class="badge
+                                    @(order.Status == "Approved" ? "bg-success" :
+                                                                    order.Status == "Delivered" ? "bg-primary" :
+                                                                    "bg-warning")">
+                            @order.Status
+                        </span>
+                    </td>
+                </tr>
+                                }
+            </tbody>
+        </table>
+
+        <a href="/Admin/Index#ordersSection"
+           class="btn btn-sm btn-dark w-100 mt-2">
+            View All Orders
+        </a>
+    </div>
+</div>

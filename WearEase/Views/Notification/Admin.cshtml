@@ -1,0 +1,18 @@
+﻿<h2>Admin Notification Panel</h2>
+
+<input type="text" id="message" placeholder="Enter notification" />
+<button onclick="sendNotification()">Send</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+<script>
+    function sendNotification() {
+        const msg = document.getElementById("message").value;
+
+        fetch('/Notification/Send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'message=' + encodeURIComponent(msg)
+        });
+        document.getElementById("message").value="";    
+    }
+</script>

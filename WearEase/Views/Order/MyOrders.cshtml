@@ -1,0 +1,56 @@
+﻿@model IEnumerable<WearEase.Models.Order>
+
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-4 text-center">My Orders</h2>
+
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info text-center">
+                You have not placed any orders yet.
+            </div>
+        }
+        else
+        {
+            <table class="table table-bordered text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td>@order.Id</td>
+                            <td>@order.OrderDate.ToString("dd MMM yyyy")</td>
+                            <td>$@order.TotalAmount</td>
+                            <td>
+                                <span class="badge
+                                            @(order.Status == "Delivered" ? "bg-success" :
+                                                                            order.Status == "Approved" ? "bg-primary" : "bg-warning")">
+                            @order.Status
+                        </span>
+                    </td>
+                    <td>
+                        <a asp-action="Confirmation"
+                           asp-route-id="@order.Id"
+                           class="btn btn-outline-dark btn-sm">
+                            View
+                        </a>
+                    </td>
+                </tr>
+                                }
+                </tbody>
+            </table>
+        }
+    </div>
+</section>

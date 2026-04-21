@@ -1,0 +1,109 @@
+﻿@* @model IEnumerable<WearEase.Models.Product>
+<section class="py-5 bg-light">
+    <div class="container">
+       
+        <h2 class="fw-bold text-center mb-2">
+            @ViewBag.SelectedCategoryName
+        </h2>
+
+        <p class="text-center text-muted mb-5">
+            Explore our latest @ViewBag.SelectedCategoryName.ToLower()
+        </p>
+
+        
+
+       
+            @foreach (var group in Model.GroupBy(p => p.Category.Name))
+            {
+                <div class="col-12 mb-4">
+                    <h3 class="fw-bold text-uppercase border-bottom pb-2">
+                        @group.Key
+                    </h3>
+                </div>
+
+                <div class="row">
+                    @foreach (var product in group)
+                    {
+                        <div class="col-md-3 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <img src="@product.ImageUrl"
+                                     class="card-img-top"
+                                     style="height:300px;object-fit:cover;" />
+
+                                <div class="card-body text-center">
+                                    <h6 class="fw-bold">@product.Name</h6>
+                                    <p class="text-muted">$@product.Price</p>
+
+                                    <a asp-controller="Product"
+                                       asp-action="Details"
+                                       asp-route-id="@product.Id"
+                                       class="btn btn-dark btn-sm">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+    </div>
+</section>
+ *@
+@model IEnumerable<WearEase.Models.Product>
+
+<section class="py-5 bg-light">
+    <div class="container">
+
+        <!-- PAGE TITLE -->
+        <h2 class="fw-bold text-center mb-2">
+            @ViewBag.SelectedCategoryName
+        </h2>
+
+        <p class="text-center text-muted mb-5">
+            Explore our latest @ViewBag.SelectedCategoryName?.ToLower()
+        </p>
+
+        <!-- CATEGORY SECTIONS -->
+        @foreach (var group in Model.GroupBy(p => p.Category.Name))
+        {
+            <div class="mb-5">
+
+                <!-- CATEGORY TITLE -->
+                <h3 class="category-title">
+                    @group.Key
+                </h3>
+
+                <!-- HORIZONTAL PRODUCT SLIDER -->
+                <div class="horizontal-scroll">
+
+                    @foreach (var product in group)
+                    {
+                        <div class="product-card">
+
+                            <!-- PRODUCT IMAGE -->
+                            <img src="@product.ImageUrl"
+                                 alt="@product.Name" />
+
+                            <!-- PRODUCT INFO -->
+                            <div class="product-info">
+                                <h6>@product.Name</h6>
+                                <p>$@product.Price</p>
+
+                                <a asp-controller="Product"
+                                   asp-action="Details"
+                                   asp-route-id="@product.Id"
+                                   class="btn btn-dark btn-sm">
+                                    View Details
+                                </a>
+                            </div>
+
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+
+    </div>
+</section>

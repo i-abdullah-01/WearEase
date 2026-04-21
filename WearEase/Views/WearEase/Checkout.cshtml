@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Checkout ";
+}
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-4 text-center">Checkout</h2>
+
+        <div class="row">
+            <!-- BILLING DETAILS FORM -->
+            <div class="col-lg-8 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-4">Billing & Shipping Information</h5>
+
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Email</label>
+                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Phone</label>
+                                    <input type="tel" class="form-control" placeholder="e.g. +92 300 1234567">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">City</label>
+                                    <input type="text" class="form-control" placeholder="Enter your city">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Address</label>
+                                <textarea class="form-control" rows="2" placeholder="House No, Street, Area"></textarea>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Postal Code</label>
+                                    <input type="text" class="form-control" placeholder="e.g. 54000">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Country</label>
+                                    <select class="form-select">
+                                        <option selected>Pakistan</option>
+                                        <option>United States</option>
+                                        <option>United Kingdom</option>
+                                        <option>Canada</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ORDER SUMMARY -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3">Order Summary</h5>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Men's Casual Shirt</span>
+                            <span>$25.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Women's Floral Dress</span>
+                            <span>$30.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Kids T-Shirt</span>
+                            <span>$15.00</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Shipping</span>
+                            <span>$5.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between fw-bold mb-3">
+                            <span>Total</span>
+                            <span>$75.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAYMENT METHOD -->
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3">Payment Method</h5>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="cod" checked>
+                            <label class="form-check-label" for="cod">
+                                Cash on Delivery
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="card">
+                            <label class="form-check-label" for="card">
+                                Credit/Debit Card
+                            </label>
+                        </div>
+
+                        <a href="/WearEase/OrderConfirmation" class="btn btn-dark w-100 py-2">Place Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

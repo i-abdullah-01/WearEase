@@ -1,0 +1,25 @@
+﻿<div class="card mt-4">
+    <div class="card-body">
+        <h5 class="fw-bold mb-3">Orders Per Day</h5>
+        <canvas id="ordersChart"></canvas>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('ordersChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: @Html.Raw(Json.Serialize(Model.OrderDates)),
+            datasets: [{
+                label: 'Orders',
+                data: @Html.Raw(Json.Serialize(Model.OrdersPerDay)),
+                borderWidth: 2,
+                fill: false
+            }]
+        }
+    });
+</script>
+
